@@ -1,5 +1,6 @@
 import Counter from "@/components/Counter";
 import About from "@/components/Home/About";
+import Doctors from "@/components/Home/Doctors";
 import HomeCarousal from "@/components/Home/HeroPage";
 import Services from "@/components/Home/Services";
 
@@ -33,6 +34,7 @@ export default function Home() {
       <Counter />
       <Services />
       <About />
+      <Doctors />
     </main>
   );
 }

@@ -1,12 +1,13 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import Navbar from "./Navbar";
 
-const Header = () => {
+const Header: React.FC = () => {
   const [isSticky, setIsSticky] = useState(false);
 
   const pathName = usePathname();
@@ -29,17 +30,12 @@ const Header = () => {
     };
   }, []);
 
-  const headerVariants = {
+  const headerVariants: Variants = {
     initial: { height: "8rem" },
     sticky: { height: "6rem" },
   };
 
-  const imageVariants = {
-    initial: { height: "10rem" },
-    sticky: { height: "4rem" },
-  };
-
-  const textVariants = {
+  const textVariants: Variants = {
     initial: { fontSize: "1.2rem" },
     sticky: { fontSize: "0.9rem" },
   };
@@ -69,9 +65,6 @@ const Header = () => {
                 fill
                 style={{ objectFit: "contain" }}
                 priority
-                variants={imageVariants}
-                initial="initial"
-                animate={isSticky ? "sticky" : "initial"}
               />
             </div>
           </Link>
@@ -88,19 +81,7 @@ const Header = () => {
         </div>
 
         <div className="flex items-center flex-shrink-0 space-x-5">
-          {/* <Link href="/contact">
-            <div className="flex items-center justify-center h-auto px-4 py-2 text-sm text-white bg-teal-800 rounded-md shadow-md w-fit">
-              <motion.span
-                variants={textVariants}
-                initial="initial"
-                animate={isSticky ? "sticky" : "initial"}
-              >
-                Call Me
-              </motion.span>
-            </div>
-          </Link> */}
-
-          <Link href="/book_an_appoinment">
+          <Link href="/book_an_appointment">
             <div className="flex items-center justify-center h-auto px-6 py-4 text-sm text-white rounded-full shadow-md from-teal-600 to-teal-800 bg-gradient-to-tr to w-fit">
               <motion.span
                 variants={textVariants}
