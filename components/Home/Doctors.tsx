@@ -12,6 +12,7 @@ const Doctors = () => {
             OUR <span className="text-indigo-800">DOCTORS</span>
           </span>
         </h1>
+        <div className="grid w-full grid-cols-3 gap-6"></div>
       </div>
     </div>
   );
