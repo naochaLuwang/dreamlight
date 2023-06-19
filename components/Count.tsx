@@ -7,17 +7,25 @@ interface CountUpComponentProps {
 }
 
 const CountUpComponent: React.FC<CountUpComponentProps> = ({ end }) => {
-  const countRef = useRef<any>(null);
+  const countUpRef = useRef<any>(null);
 
   useEffect(() => {
-    if (countRef.current) {
-      countRef.current.start();
+    if (countUpRef.current) {
+      countUpRef.current.start();
     }
   }, []);
 
   return (
     <div className="text-2xl font-bold lg:text-5xl">
-      <CountUp start={0} end={end} duration={5} ref={countRef} suffix=" +" />
+      <CountUp
+        start={0}
+        end={end}
+        duration={5}
+        ref={countUpRef}
+        suffix=" +"
+        enableScrollSpy
+        scrollSpyDelay={100}
+      />
     </div>
   );
 };
