@@ -1,8 +1,5 @@
 import Counter from "@/components/Counter";
-import Footer from "@/components/Footer";
-import About from "@/components/Home/About";
 import Blogs from "@/components/Home/Blogs";
-import BookNow from "@/components/Home/BookNow";
 import Departments from "@/components/Home/Departments";
 import Doctors from "@/components/Home/Doctors";
 import Embed from "@/components/Home/Embed";
@@ -10,7 +7,12 @@ import HomeCarousal from "@/components/Home/HeroPage";
 import Services from "@/components/Home/Services";
 import Testimonial from "@/components/Home/Testimonial";
 
-import Image from "next/image";
+export const metadata = {
+  icons: {
+    icon: "/favicon.png",
+  },
+  title: "DREAMLIGHT HOSPITAL",
+};
 
 type CarouselItem = {
   imageUrl: string;
