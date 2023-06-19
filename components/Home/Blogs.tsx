@@ -64,7 +64,9 @@ const Blogs = () => {
               className="w-[22rem] mx-auto my-10 relative border-indigo-950 border-opacity-60 bg-white px-3 pt-3 bg-opacity-10 border-[3px] rounded-xl h-auto pb-10 border-clip-slice inset-0"
               key={index}
             >
-              <div className="w-full h-40 bg-red-200 rounded-xl"></div>
+              <div className="relative w-full h-40 bg-red-200 rounded-xl">
+                <Image src={"/icu.jpeg"} alt="" fill />
+              </div>
               <div className="flex items-center justify-between w-full px-2 mt-2">
                 <div className="flex items-center space-x-1">
                   <BsCalendar3WeekFill className="text-[#a3228f] h-4 w-4" />
@@ -76,14 +78,15 @@ const Blogs = () => {
                 </div>
               </div>
               <div className="flex flex-col px-2">
-                <h1 className="w-full mt-4 text-2xl font-bold">
-                  Blog Title Goes Here
+                <h1 className="w-full mt-4 text-xl font-bold line-clamp-2">
+                  Triumphant Achievement: Dreamlight Hospital in Baihata
+                  Chariali Shines Bright
                 </h1>
                 <p className="mt-2 mb-8 text-sm line-clamp-3">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
-                  earum totam porro atque nemo quidem, veritatis vel quo ratione
-                  odio at molestias, consectetur aspernatur quasi sint hic. A,
-                  aperiam labore!
+                  The great success of Dreamlight Hospital, Baihata Chariali.
+                  First patient of dreamlight hospital was admitted in ICU in
+                  critacal condition and the patient is scuccesfully recovered
+                  and discharged.
                 </p>
 
                 <Link

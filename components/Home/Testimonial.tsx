@@ -18,13 +18,13 @@ const testimonials = [
     name: "Naocha Luwang",
     address: "Guwahati",
     testimony:
-      "The care I received at Dreamlight Hospital exceeded all expectations. The doctors expertise and the compassionate staff made me feel supported throughout my recovery journey. I am forever grateful for their exceptional dedication and commitment to my well-being.",
+      "I am grateful to the hospital for the outstanding treatment I received. The entire team displayed unwavering dedication, from the doctors who diagnosed my condition to the nurses who provided round-the-clock care. I am impressed by the hospital's commitment to patient well-being and would highly recommend their services",
   },
   {
     name: "Naocha Luwang",
     address: "Guwahati",
     testimony:
-      "The care I received at Dreamlight Hospital exceeded all expectations. The doctors expertise and the compassionate staff made me feel supported throughout my recovery journey. I am forever grateful for their exceptional dedication and commitment to my well-being.",
+      "I would like to express my heartfelt appreciation to the hospital for their outstanding care. The doctors demonstrated expertise and compassion, while the support staff ensured a clean and comfortable environment. I am truly thankful for their commitment to my well-being.",
   },
 ];
 

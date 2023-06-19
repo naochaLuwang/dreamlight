@@ -2,6 +2,43 @@ import React from "react";
 import Link from "next/link";
 import { IoMail } from "react-icons/io5";
 import { BsTelephoneFill } from "react-icons/bs";
+import { FaMapMarkerAlt } from "react-icons/fa";
+
+const links = [
+  {
+    title: "About Us",
+  },
+  {
+    title: "Services",
+  },
+  {
+    title: "Departments",
+  },
+  {
+    title: "Contact Us",
+  },
+];
+
+const services = [
+  {
+    title: "24/7 ICU & EMERGENCY SERVICES",
+  },
+  {
+    title: "24/7 AMBULANCE SERVICES",
+  },
+  {
+    title: "24/7 LABORATORY SERVICES",
+  },
+  {
+    title: "24/7 TRAUMA & CRITICAL CARE MANAGEMENT",
+  },
+  {
+    title: "RADIOLOGY & IMAGING",
+  },
+  {
+    title: "BED FACILITY",
+  },
+];
 
 const Footer = () => {
   return (
@@ -11,10 +48,13 @@ const Footer = () => {
           <h1 className="border border-b-[1px] border-transparent w-fit border-b-[#BDBDBF]">
             ABOUT
           </h1>
-          <p className="mt-5 text-sm line-clamp-4 text-[#BDBDBF]">
-            We are a Centre for Advanced Urology & Kidney Diseases is the only
-            centre in entire North-Eastern Region of India dedicated only for
-            Urological Problems. With the use of Most Advanced Laser Machines
+          <p className="mt-5 text-sm line-clamp-7 text-[#BDBDBF]">
+            Discover Dreamlight Hospital - Baihata Chariali&apos;s premier
+            healthcare destination. With international standard facilities,
+            cutting-edge equipment, and exceptional services, we provide the
+            best in patient care. Trust our experienced team to deliver
+            top-quality medical expertise under one roof. Your well-being is our
+            priority.
           </p>
           <p className="mt-2 text-sm text-[#BDBDBF] hover:text-white">
             read more
@@ -23,37 +63,29 @@ const Footer = () => {
 
         <div className="flex flex-col lg:pl-14">
           <h1 className="border border-b-[1px] border-transparent w-fit border-b-[#BDBDBF]">
-            Department
+            QUICK LINKS
           </h1>
-          <Link href="/" className="mt-5">
-            <p className="text-sm text-[#BDBDBF] hover:text-white">UROLOGY</p>
-          </Link>
-          <Link href="/" className="mt-2">
-            <p className="text-sm text-[#BDBDBF] hover:text-white">
-              URO-ONCOLOGY
-            </p>
-          </Link>
-          <Link href="/" className="mt-2">
-            <p className="text-sm text-[#BDBDBF] hover:text-white">
-              NEPHROLOGY
-            </p>
-          </Link>
+
+          {links.map((link, index) => (
+            <Link href="/" className="mt-5" key={index}>
+              <p className="text-sm text-[#BDBDBF] hover:text-white">
+                {link.title}
+              </p>
+            </Link>
+          ))}
         </div>
 
         <div className="flex flex-col">
           <h1 className="border border-b-[1px] border-transparent w-fit border-b-[#BDBDBF]">
-            GET IN TOUCH
+            SERVICES
           </h1>
-          <div className="flex items-center mt-5 space-x-2 text-sm text-white">
-            <span>
-              <IoMail className="w-6 h-6 mr-2 text-white" />
-            </span>{" "}
-            Support available for 24/7
-          </div>
-
-          <p className="mt-3 text-[#BDBDBF] hover:text-white">
-            aukd.assam@gmail.com
-          </p>
+          {services.map((service, index) => (
+            <Link href="/" className="mt-5" key={index}>
+              <p className="text-sm text-[#BDBDBF] hover:text-white">
+                {service.title}
+              </p>
+            </Link>
+          ))}
         </div>
 
         <div className="flex flex-col">
@@ -63,14 +95,20 @@ const Footer = () => {
           <div className="flex items-center mt-5 space-x-2">
             <BsTelephoneFill className="w-4 h-4 text-white" />
             <p className="text-sm text-[#BDBDBF] hover:text-white">
-              +91 9864104444
+              03621 291 245
             </p>
           </div>
 
           <div className="flex items-center mt-2 space-x-2">
-            <BsTelephoneFill className="w-4 h-4 text-white" />
+            <IoMail className="w-4 h-4 text-white" />
             <p className="text-sm text-[#BDBDBF] hover:text-white">
-              +91 882272671
+              dreamlighthospital@gmail.com
+            </p>
+          </div>
+          <div className="flex items-center mt-2 space-x-2">
+            <FaMapMarkerAlt className="flex-shrink-0 w-4 h-4 text-white" />
+            <p className="text-sm text-[#BDBDBF] hover:text-white">
+              Guwahati Road Tiniali, Baihata Chariali, Baihata, India, Assam
             </p>
           </div>
         </div>
@@ -80,9 +118,9 @@ const Footer = () => {
           Copyright &copy; 2023{" "}
           <span>
             <Link href="/" className="text-white">
-              IUKD
+              DREAMLIGHT HOSPITAL
             </Link>
-          </span>
+          </span>{" "}
           Designed By{" "}
           <span>
             <Link

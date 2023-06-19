@@ -20,11 +20,10 @@ const CountUpComponent: React.FC<CountUpComponentProps> = ({ end }) => {
       <CountUp
         start={0}
         end={end}
-        duration={5}
+        duration={2}
         ref={countUpRef}
         suffix=" +"
-        enableScrollSpy
-        scrollSpyDelay={100}
+        enableScrollSpy={false}
       />
     </div>
   );

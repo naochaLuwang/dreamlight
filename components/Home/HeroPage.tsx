@@ -101,7 +101,7 @@ const HomeCarousal: React.FC<HomeCarousalProps> = ({ items, counters }) => {
           ))}
         </Carousel>
       ) : (
-        <Skeleton className="w-full h-[480px]" />
+        <Skeleton className="w-full h-[79vh] bg-gradient-to-b from-pink-500 to-black" />
       )}
 
       {/* <Counter counter={counters} /> */}
