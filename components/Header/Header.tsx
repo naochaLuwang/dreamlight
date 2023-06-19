@@ -36,13 +36,13 @@ const Header: React.FC = () => {
   };
 
   const textVariants: Variants = {
-    initial: { fontSize: "1.2rem" },
-    sticky: { fontSize: "0.9rem" },
+    initial: { fontSize: "1.0rem" },
+    sticky: { fontSize: "0.8rem" },
   };
 
   return (
     <motion.div
-      className={`z-50 items-center hidden lg:flex w-full  shadow-sm h-32 py-8 ${
+      className={`z-50 items-center hidden lg:flex w-full  shadow-md h-28 py-8 ${
         !isSticky ? "transition-all duration-300 ease-in-out" : "fixed top-0"
       } ${pathName === "/" && !isSticky ? "bg-white" : "bg-white"}`}
       variants={headerVariants}
@@ -50,7 +50,7 @@ const Header: React.FC = () => {
       animate={isSticky ? "sticky" : "initial"}
     >
       <div className="flex items-center justify-between w-full px-10 ">
-        <div className="flex items-center">
+        <div className="flex items-center w-full">
           <Link href="/">
             <div
               className={`relative w-40 ${
@@ -76,7 +76,7 @@ const Header: React.FC = () => {
           </h1>
         </div>
 
-        <div className="w-full h-full ">
+        <div className="w-full h-auto ">
           <Navbar />
         </div>
 

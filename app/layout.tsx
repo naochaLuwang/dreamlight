@@ -2,6 +2,7 @@ import Social from "@/components/Header/Social";
 import "./globals.css";
 import { Poppins } from "next/font/google";
 import Header from "@/components/Header/Header";
+import Footer from "@/components/Footer";
 // import Header from "@/components/Header/Header";
 // import Navbar from "@/components/Navbar/Navbar";
 // import Footer from "../components/Footer";
@@ -35,8 +36,8 @@ export default function RootLayout({
           {children}
         </div>
 
-        {/* <Footer />
-        <ScrollToTopButton /> */}
+        <Footer />
+        {/* <ScrollToTopButton /> */}
       </body>
     </html>
   );

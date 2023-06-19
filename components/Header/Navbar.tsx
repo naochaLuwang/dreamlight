@@ -63,7 +63,89 @@ const Navbar = () => {
       id: 2,
       title: "Services",
       slug: "/services",
+      isMulti: "No",
+      sublinks: [
+        {
+          title: "24/7 ICU & Emergency Service",
+          subtitle: "",
+          slug: "urology",
+          order: 0,
+          status: "ACTIVE",
+          content: "",
+          pageType: "dynamic",
+          createdAt: "2023-06-09T16:24:19.654Z",
+          updatedAt: "2023-06-09T16:55:38.264Z",
+        },
+        {
+          title: "24/7 Ambulance",
+          subtitle: "",
+          slug: "urology",
+          order: 0,
+          status: "ACTIVE",
+          content: "",
+          pageType: "dynamic",
+          createdAt: "2023-06-09T16:24:19.654Z",
+          updatedAt: "2023-06-09T16:55:38.264Z",
+        },
+        {
+          title: "24/7 Laboratory Service",
+          subtitle: "",
+          slug: "urology",
+          order: 0,
+          status: "ACTIVE",
+          content: "",
+          pageType: "dynamic",
+          createdAt: "2023-06-09T16:24:19.654Z",
+          updatedAt: "2023-06-09T16:55:38.264Z",
+        },
+      ],
+    },
+    {
+      id: 3,
+      title: "Departments",
+      slug: "/departments",
       isMulti: "YES",
+      sublinks: [
+        {
+          title: "General Surgery",
+          subtitle: "",
+          slug: "urology",
+          order: 0,
+          status: "ACTIVE",
+          content: "",
+          pageType: "dynamic",
+          createdAt: "2023-06-09T16:24:19.654Z",
+          updatedAt: "2023-06-09T16:55:38.264Z",
+        },
+        {
+          title: "Medicine",
+          subtitle: "",
+          slug: "urology",
+          order: 0,
+          status: "ACTIVE",
+          content: "",
+          pageType: "dynamic",
+          createdAt: "2023-06-09T16:24:19.654Z",
+          updatedAt: "2023-06-09T16:55:38.264Z",
+        },
+        {
+          title: "Neurology",
+          subtitle: "",
+          slug: "urology",
+          order: 0,
+          status: "ACTIVE",
+          content: "",
+          pageType: "dynamic",
+          createdAt: "2023-06-09T16:24:19.654Z",
+          updatedAt: "2023-06-09T16:55:38.264Z",
+        },
+      ],
+    },
+    {
+      id: 4,
+      title: "Contact Us",
+      slug: "/about",
+      isMulti: "No",
       sublinks: [],
     },
   ];
@@ -78,14 +160,14 @@ const Navbar = () => {
                 <div key={navlink.id}>
                   {navlink.sublinks.length > 0 ? (
                     <NavigationMenuItem>
-                      <NavigationMenuTrigger className="text-neutral-800">
+                      <NavigationMenuTrigger className="text-base text-neutral-800">
                         {navlink.title}
                       </NavigationMenuTrigger>
                       <NavigationMenuContent>
                         <ul
                           className={`grid w-[400px] gap-3 p-4  ${
                             navlink.isMulti === "YES"
-                              ? "w-[800px] md:grid-cols-2"
+                              ? "w-[500px] md:grid-cols-2"
                               : "grid-cols-1 md:w-[400px]"
                           }   `}
                         >
@@ -108,7 +190,7 @@ const Navbar = () => {
                       <Link href={navlink.slug}>
                         <NavigationMenuLink
                           className={`${navigationMenuTriggerStyle()} ${
-                            isSticky ? "text-neutral-800" : "text-neutral-800"
+                            isSticky ? "text-neutral-800 " : "text-neutral-800 "
                           }`}
                         >
                           {navlink.title}

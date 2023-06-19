@@ -1,54 +1,61 @@
 "use client";
 
-import { useState, useEffect } from "react";
-
-import Marquee from "react-fast-marquee";
-
+"use client";
 import { FaFacebookF } from "react-icons/fa";
 
+import {
+  AiFillInstagram,
+  AiOutlineTwitter,
+  AiFillLinkedin,
+  AiFillYoutube,
+} from "react-icons/ai";
+
+import { HiMail } from "react-icons/hi";
 import Link from "next/link";
+import { BsFillPhoneFill } from "react-icons/bs";
+import { usePathname } from "next/navigation";
 
 const Social = () => {
-  const [data, setData] = useState<any | null>();
-  const [isLoading, setLoading] = useState(false);
-
-  useEffect(() => {
-    setLoading(true);
-    fetch(`/api/alert`)
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data);
-        setLoading(false);
-      });
-  }, []);
-
+  const pathname = usePathname();
   return (
     <div
-      className={` items-center flex justify-between w-full h-12 lg:px-20 px-5 py-1 bg-gradient-to-r from-pink-600 to-pink-700`}
+      className={` items-center hidden lg:flex justify-between w-full h-12 px-10 py-1 bg-gradient-to-r from-pink-600 to-pink-900 ${
+        pathname == "/" ? "block" : "hidden"
+      }`}
     >
-      <div className="flex items-center space-x-2 border-[1px] border-y-transparent border-x-white h-full px-2">
-        <Link href="https://www.facebook.com/AUKDASSAM" target="_blank">
-          <FaFacebookF className="text-white " />
+      <div className="flex items-center space-x-2">
+        <Link href="/">
+          <div className="px-1 py-1 transition-all duration-100 ease-in-out bg-white rounded-full w-fit h-fit hover:bg-yellow-500 hover:bg-opacity-90">
+            <FaFacebookF className="w-6 h-6 text-indigo-950" />
+          </div>
         </Link>
+
+        <div className="px-1 py-1 transition-all duration-100 ease-in-out bg-white rounded-full w-fit h-fit hover:bg-yellow-500 hover:bg-opacity-90">
+          <AiFillInstagram className="w-6 h-6 text-indigo-950" />
+        </div>
+        <div className="px-1 py-1 transition-all duration-100 ease-in-out bg-white rounded-full w-fit h-fit hover:bg-yellow-500 hover:bg-opacity-90">
+          <AiOutlineTwitter className="w-6 h-6 text-indigo-950" />
+        </div>
+        <div className="px-1 py-1 transition-all duration-100 ease-in-out bg-white rounded-full w-fit h-fit hover:bg-yellow-500 hover:bg-opacity-90">
+          <AiFillLinkedin className="w-6 h-6 text-indigo-950" />
+        </div>
+        <div className="px-1 py-1 transition-all duration-100 ease-in-out bg-white rounded-full w-fit h-fit hover:bg-yellow-500 hover:bg-opacity-90">
+          <AiFillYoutube className="w-6 h-6 text-indigo-950" />
+        </div>
       </div>
-      <Marquee>
-        {data &&
-          data.map((alert: any) => (
-            <>
-              {alert.slug ? (
-                <Link href={alert.slug}>
-                  <h1 className="mr-20 text-xs text-white" key={alert.id}>
-                    {alert.title}
-                  </h1>
-                </Link>
-              ) : (
-                <h1 className="mr-20 text-xs text-white" key={alert.id}>
-                  {alert.title}
-                </h1>
-              )}
-            </>
-          ))}
-      </Marquee>
+      <div className="flex items-center space-x-5">
+        <div className="flex items-center space-x-2">
+          <HiMail className="w-6 h-6 text-white" />
+          <Link href={`mailto:pratikshaiahs@gmail.com`}>
+            <p className="text-sm text-white">dreamlighthospital@gmail.com</p>
+          </Link>
+        </div>
+        <div className="flex items-center space-x-2">
+          <BsFillPhoneFill className="w-6 h-6 text-white" />
+
+          <p className="text-sm text-white">03621 291 245</p>
+        </div>
+      </div>
     </div>
   );
 };

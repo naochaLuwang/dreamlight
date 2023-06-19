@@ -6,6 +6,7 @@ import { Skeleton } from "../../components/ui/skeleton";
 // import CarousalButton from "../CarousalButton";
 
 import Link from "next/link";
+import CarousalButton from "../CarousalButton";
 // import CarousalButtons from "../CarousalButtons";
 // import CustomLeftArrow from "../Arrow/CustomLeftArrow";
 // import CustomRightArrow from "../Arrow/CustomRightArrow";
@@ -74,27 +75,27 @@ const HomeCarousal: React.FC<HomeCarousalProps> = ({ items, counters }) => {
           partialVisible={false}
           arrows={false}
           showDots={false}
-          // customButtonGroup={<CarousalButtons />}
-          // renderButtonGroupOutside={false}
+          customButtonGroup={<CarousalButton />}
+          renderButtonGroupOutside={false}
           // customLeftArrow={<CustomLeftArrow />}
           // customRightArrow={<CustomRightArrow />}
         >
           {items.map((item, index) => (
             <div
               key={index}
-              className="relative w-full h-[650px] bg-cover bg-no-repeat bg-top "
+              className="relative w-full h-[79vh] bg-cover bg-no-repeat bg-top flex flex-col  justify-center"
               style={{
                 backgroundImage: `url(${item.imageUrl})`,
               }}
             >
-              <div className="absolute inset-0 opacity-75 bg-gradient-to-b from-pink-500 to-blue-500"></div>
-              <div className="flex flex-col items-start mx-auto px-10 lg:px-0 justify-center space-y-5 lg:max-w-6xl h-[400px] text-white">
-                <h1 className="max-w-xl text-3xl tracking-wider lg:text-3xl">
-                  {item.title}
-                </h1>
-                <p className="max-w-xl text-lg tracking-wide lg:text-xl leading-1">
+              <div className="absolute inset-0 opacity-75 bg-gradient-to-b from-pink-500 to-black"></div>
+              <div className="flex flex-col items-start mx-auto px-10 lg:px-0 justify-center space-y-5 max-w-7xl  h-[400px] text-white relative z-10">
+                <p className="text-4xl tracking-wide text-white leading-20">
                   {item.description}
                 </p>
+                <div className="text-xl w-fit px-4 py-2.5 bg-white text-[#a3228f] rounded-md tracking-wide font-medium shadow-md">
+                  ALL SPECIALITIES
+                </div>
               </div>
             </div>
           ))}
