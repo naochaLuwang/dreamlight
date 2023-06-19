@@ -58,7 +58,7 @@ const Services = () => {
   useEffect(() => {
     if (inView) {
       const facilityItems =
-        containerRef.current?.querySelectorAll(".facility-item");
+        containerRef.current?.querySelectorAll(".service-item");
       if (facilityItems) {
         gsap.from(facilityItems, {
           opacity: 0,
@@ -90,7 +90,7 @@ const Services = () => {
         >
           {data.map((item, index) => (
             <div
-              className="w-full px-10 pt-10 pb-20 h-auto border-2 border-[#a3228f] rounded-lg relative"
+              className="w-full service-item px-10 pt-10 pb-20 h-auto border-2 border-[#a3228f] rounded-lg relative"
               key={index}
               style={{ boxShadow: "5px 2px 3px rgba(0,0,0,0.2)" }}
             >
