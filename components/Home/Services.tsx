@@ -1,6 +1,11 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useInView } from "react-intersection-observer";
+import gsap from "gsap";
+import ScrollReveal from "../ScrollReveal";
 
 const data = [
   {
@@ -43,18 +48,46 @@ const data = [
 ];
 
 const Services = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.2, // Adjust the threshold as needed
+  });
+
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (inView) {
+      const facilityItems =
+        containerRef.current?.querySelectorAll(".facility-item");
+      if (facilityItems) {
+        gsap.from(facilityItems, {
+          opacity: 0,
+          y: 100,
+          stagger: 0.2,
+          duration: 0.8,
+          ease: "power3.out",
+        });
+      }
+    }
+  }, [inView]);
   return (
-    <div className="w-full h-auto py-10 bg-white">
+    <div className="w-full h-auto py-10 bg-white" ref={ref}>
       <div className="w-full h-auto mx-auto max-w-7xl">
-        <h1 className="relative w-full text-4xl font-bold tracking-wider text-center">
-          <span
-            className="text-black bg-clip-text bg-gradient-to-b"
-            style={{ textShadow: "5px 1px 2px rgba(0,0,0,0.3)" }}
-          >
-            OUR <span className="text-indigo-800">SERVICES</span>
-          </span>
-        </h1>
-        <div className="grid w-full grid-cols-1 gap-6 px-4 py-10 lg:py-20 lg:px-0 lg:grid-cols-3">
+        <ScrollReveal>
+          <h1 className="relative w-full text-4xl font-bold tracking-wider text-center">
+            <span
+              className="text-black bg-clip-text bg-gradient-to-b"
+              style={{ textShadow: "5px 1px 2px rgba(0,0,0,0.3)" }}
+            >
+              OUR <span className="text-indigo-800">SERVICES</span>
+            </span>
+          </h1>
+        </ScrollReveal>
+
+        <div
+          className="grid w-full grid-cols-1 gap-6 px-4 py-10 lg:py-20 lg:px-0 lg:grid-cols-3"
+          ref={containerRef}
+        >
           {data.map((item, index) => (
             <div
               className="w-full px-10 pt-10 pb-20 h-auto border-2 border-[#a3228f] rounded-lg relative"

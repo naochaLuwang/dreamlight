@@ -9,7 +9,7 @@ import Testimonial from "@/components/Home/Testimonial";
 
 export const metadata = {
   icons: {
-    icon: "/favicon.png",
+    icon: "favicon.png",
   },
   title: "DREAMLIGHT HOSPITAL",
 };
