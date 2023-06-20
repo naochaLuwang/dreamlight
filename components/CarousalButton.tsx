@@ -7,7 +7,7 @@ const CarousalButton = ({ next, previous, ...rest }: any) => {
     carouselState: { currentSlide },
   } = rest;
   return (
-    <div className="absolute -left-[85vw] flex items-center justify-end w-full mt-2 bottom-20 carousel-button-group">
+    <div className="absolute flex items-center justify-start w-full mt-2 lg:left-20 left-10 lg:bottom-20 bottom-10 carousel-button-group">
       <div
         className={currentSlide === 0 ? "disable" : "cursor-pointer"}
         onClick={() => previous()}

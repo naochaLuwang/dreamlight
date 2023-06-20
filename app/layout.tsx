@@ -3,6 +3,7 @@ import "./globals.css";
 import { Poppins } from "next/font/google";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer";
+import MobileHeader from "@/components/Header/MobileHeader";
 // import Header from "@/components/Header/Header";
 // import Navbar from "@/components/Navbar/Navbar";
 // import Footer from "../components/Footer";
@@ -29,9 +30,9 @@ export default function RootLayout({
       <body className={`${poppins.className} scrollbar-hide `}>
         <Social />
         <Header />
-        {/* <MobileHeader />
+        <MobileHeader />
 
-        <Navbar /> */}
+        {/* <Navbar /> */}
         <div className="flex flex-col w-full overflow-hidden h-fit ">
           {children}
         </div>

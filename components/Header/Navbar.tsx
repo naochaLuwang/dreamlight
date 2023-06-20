@@ -144,7 +144,7 @@ const Navbar = () => {
     {
       id: 4,
       title: "Contact Us",
-      slug: "/about",
+      slug: "/contact",
       isMulti: "No",
       sublinks: [],
     },

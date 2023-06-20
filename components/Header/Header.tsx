@@ -31,8 +31,8 @@ const Header: React.FC = () => {
   }, []);
 
   const headerVariants: Variants = {
-    initial: { height: "8rem" },
-    sticky: { height: "6rem" },
+    initial: { height: "6rem" },
+    sticky: { height: "5rem" },
   };
 
   const textVariants: Variants = {
@@ -40,9 +40,14 @@ const Header: React.FC = () => {
     sticky: { fontSize: "0.8rem" },
   };
 
+  const nameVariants: Variants = {
+    initial: { fontSize: "1.875rem", lineHeight: "2.25rem" },
+    sticky: { fontSize: "1.5rem", lineHeight: "2rem" },
+  };
+
   return (
     <motion.div
-      className={`z-50 items-center hidden lg:flex w-full  shadow-md h-28 py-8 ${
+      className={`z-50 items-center hidden lg:flex w-full  shadow-md h-24 py-8 ${
         !isSticky ? "transition-all duration-300 ease-in-out" : "fixed top-0"
       } ${pathName === "/" && !isSticky ? "bg-white" : "bg-white"}`}
       variants={headerVariants}
@@ -55,8 +60,8 @@ const Header: React.FC = () => {
             <div
               className={`relative w-40 ${
                 isSticky
-                  ? "h-24 transition-all duration-100 ease-in-out"
-                  : "h-28 transition-all duration-100 ease-in-out"
+                  ? "h-16 transition-all duration-100 ease-in-out"
+                  : "h-20 transition-all duration-100 ease-in-out"
               }`}
             >
               <Image
@@ -69,11 +74,16 @@ const Header: React.FC = () => {
             </div>
           </Link>
 
-          <h1 className="text-3xl font-bold tracking-wider text-transparent bg-gradient-to-b from-pink-700 to-pink-900 bg-clip-text">
+          <motion.h1
+            className="font-bold tracking-wider text-transparent  bg-gradient-to-b from-pink-700 to-pink-900 bg-clip-text"
+            variants={nameVariants}
+            initial="initial"
+            animate={isSticky ? "sticky" : "initial"}
+          >
             DREAMLIGHT
             <br />
             HOSPITAL
-          </h1>
+          </motion.h1>
         </div>
 
         <div className="w-full h-auto ">
