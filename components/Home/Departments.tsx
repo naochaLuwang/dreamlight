@@ -63,7 +63,7 @@ const Departments = () => {
             ALL SPECIALITIES
           </Link>
         </div>
-        <div className="w-full h-auto px-4 py-5 bg-white lg:px-10">
+        <div className="w-full h-auto py-5 bg-white sm:px-4 lg:px-0 lg:pr-20 lg:pl-10">
           <div className="grid w-full grid-cols-2 gap-4">
             {departments.map((department, index) => (
               <div

@@ -4,6 +4,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 import CarousalButton from "../CarousalButton";
+import Link from "next/link";
 
 interface HomeCarousalProps {
   items: CarousalProps[];
@@ -86,9 +87,12 @@ const HomeCarousal: React.FC<HomeCarousalProps> = ({ items, counters }) => {
                 <p className="text-2xl tracking-wide text-white lg:text-4xl leading-20">
                   {item.description}
                 </p>
-                <div className="text-xl w-fit px-4 py-2.5 bg-white text-[#a3228f] rounded-md tracking-wide font-medium shadow-md">
+                <Link
+                  href="/departments"
+                  className="text-xl w-fit px-4 py-2.5 bg-white text-[#a3228f] rounded-md tracking-wide font-medium shadow-md"
+                >
                   ALL SPECIALITIES
-                </div>
+                </Link>
               </div>
             </div>
           ))}
