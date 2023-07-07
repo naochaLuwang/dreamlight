@@ -49,12 +49,12 @@ const Header: React.FC = () => {
     <motion.div
       className={`z-50 items-center hidden lg:flex w-full  shadow-md h-24 py-8 ${
         !isSticky ? "transition-all duration-300 ease-in-out" : "fixed top-0"
-      } ${pathName === "/" && !isSticky ? "bg-white" : "bg-white"}`}
+      } ${pathName === "/" && !isSticky ? "bg-red-200" : "bg-white"}`}
       variants={headerVariants}
       initial="initial"
       animate={isSticky ? "sticky" : "initial"}
     >
-      <div className="flex items-center justify-between w-full px-10 ">
+      <div className="flex items-center justify-between w-full px-10 mx-auto max-w-8xl ">
         <div className="flex items-center w-full">
           <Link href="/">
             <div
@@ -75,7 +75,7 @@ const Header: React.FC = () => {
           </Link>
 
           <motion.h1
-            className="font-bold tracking-wider text-transparent  bg-gradient-to-b from-pink-700 to-pink-900 bg-clip-text"
+            className="font-bold tracking-wider text-transparent bg-gradient-to-b from-pink-700 to-pink-900 bg-clip-text"
             variants={nameVariants}
             initial="initial"
             animate={isSticky ? "sticky" : "initial"}
